@@ -549,14 +549,20 @@ describe('Provider', () => {
       const error = new Error('Error deleting file');
       // @ts-expect-error Simulate 404 response from server
       error.code = 404;
-      const customError = new Error('Remote file was not found, you may have to delete manually.');
+      const consoleWarnSpy = jest.spyOn(console, 'warn').mockImplementation();
+
       mockedFile.delete = jest.fn().mockImplementation(() => {
         throw error;
       });
       mockedFileData.url = 'base/path/tmp/strapi/4l0ngH45h.jpeg';
 
       const providerInstance = provider.init(mockedConfig);
-      expect(providerInstance.delete(mockedFileData)).rejects.toThrow(customError);
+      providerInstance.delete(mockedFileData);
+
+      expect(consoleWarnSpy).toHaveBeenCalledWith(
+        'Remote file was not found, you may have to delete manually.'
+      );
+      consoleWarnSpy.mockRestore();
 
       expect(mockedStorage.bucket).toHaveBeenCalledTimes(1);
       expect(mockedStorage.bucket).toHaveBeenCalledWith(mockedConfig.bucketName);

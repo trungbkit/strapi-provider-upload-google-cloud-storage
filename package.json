@@ -1,6 +1,6 @@
 {
-  "name": "@strapi-community/strapi-provider-upload-google-cloud-storage",
-  "version": "5.0.4",
+  "name": "@trungjs/strapi-provider-upload-google-cloud-storage",
+  "version": "5.0.6",
   "description": "Community Google Cloud Storage Provider for Strapi Upload",
   "keywords": [
     "strapi",
@@ -10,18 +10,18 @@
     "storage",
     "gcp"
   ],
-  "homepage": "https://github.com/strapi-community/strapi-provider-upload-google-cloud-storage#readme",
+  "homepage": "https://github.com/trungbkit/strapi-provider-upload-google-cloud-storage#readme",
   "bugs": {
-    "url": "https://github.com/strapi-community/strapi-provider-upload-google-cloud-storage/issues"
+    "url": "https://github.com/trungbkit/strapi-provider-upload-google-cloud-storage/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/strapi-community/strapi-provider-upload-google-cloud-storage.git"
+    "url": "git+https://github.com/trungbkit/strapi-provider-upload-google-cloud-storage.git"
   },
   "license": "MIT",
   "author": {
     "name": "Strapi Community",
-    "url": "https://github.com/strapi-community"
+    "url": "https://github.com/trungbkit"
   },
   "maintainers": [
     {

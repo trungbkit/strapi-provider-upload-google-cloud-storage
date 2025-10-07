@@ -82,7 +82,8 @@ export default {
           await bucket.file(fileName).delete();
         } catch (error) {
           if (error instanceof Error && 'code' in error && error.code === 404) {
-            throw new Error('Remote file was not found, you may have to delete manually.');
+            console.warn('Remote file was not found, you may have to delete manually.', fileName);
+            return;
           }
           throw error;
         }
